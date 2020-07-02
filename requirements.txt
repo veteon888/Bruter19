@@ -1,4 +1,2 @@
 selenium==4.0.0a1
-pyvirtualdisplay==0.2.5
-requests==2.22.0
-bs4
+

