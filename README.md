@@ -8,7 +8,7 @@
 * sudo python3 bruter19.py
 # ADDED FEATURES IN V2.0
 * The Tool Supports Turkish Language Now
-* The Tool Is Able To Generate Personolized Wordlist Now
+* The Tool Is Able To Generate Personalized Wordlist Now
 * The Tool Is A Bit Faster Now
 # FIXED BUGS IN V2.0
 * The tool was finding the wrong password in the long wordlists. It is fixed, the user is able to use long wordlists now.
