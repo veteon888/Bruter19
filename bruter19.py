@@ -16,7 +16,7 @@ try:
         banner.bruter19_wordlist_banner()
         wordlist=input(colored.red("\n\n[")+colored.blue("bruter19")+colored.yellow("@")+colored.cyan(platform.node())+colored.red("]") + colored.red(" - [") + colored.yellow("#") + colored.red("]"))
         if wordlist=="2" or wordlist=="no" or wordlist=="n":
-            os.system("xterm -e python3 cupp/cupp.py -i")
+            os.system("xterm -e python3 bruter19_cupp/cupp.py -i")
             os.system("zenity --info --text='Your Wordlist Has Been Generated In The Bruter19/ Directory'")
         banner.brute19banner()
 
@@ -99,7 +99,7 @@ try:
         banner.bruter19_wordlist_banner_tr()
         wordlist=input(colored.red("\n\n[")+colored.blue("bruter19")+colored.yellow("@")+colored.cyan(platform.node())+colored.red("]") + colored.red(" - [") + colored.yellow("#") + colored.red("]"))
         if wordlist=="2" or wordlist=="hayır" or wordlist=="Hayır" or wordlist=="h":
-            os.system("xterm -e python3 cupp/cupptr.py -i")
+            os.system("xterm -e python3 bruter19_cupp/cupptr.py -i")
             os.system("zenity --info --text='Wordlist Bruter19/ Dizinine Oluşturuldu.'")
         banner.brute19bannertr()
 

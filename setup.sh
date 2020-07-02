@@ -18,6 +18,7 @@ cp chromedriver path/
 rm chromedriver*
 pip3 install certifi
 pip3 install -r requirements.txt
+git clone https://github.com/SusmithKrishnan/torghost.git
 bash torghost/build.sh
 bash torghost/install.sh
 rm *.spec
