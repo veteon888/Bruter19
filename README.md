@@ -25,7 +25,7 @@
 # USAGE
 * Choose Your Language
 # ![](banner/2.png)
-* If You Input 2, You Will Be Able To Generate Personalized Wordlist
+* If You Input 2 after choosing the language, You Will Be Able To Generate Personalized Wordlist
 # ![](banner/cupp.png)
 * Give The Mail 
 * Give The Path Of The Wordlist
