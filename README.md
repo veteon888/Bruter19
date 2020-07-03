@@ -15,6 +15,13 @@
 * The tool was finding the wrong password every time you press ctrl+c. That issue is fixed now.
 * The tool was failing when you inputed the wordlist path incorrectly. That issue is fixed now.
 * Anonsurf was failing in the long wordlists. Now torghost is used in the tool. That issue is fixed now.
+# CHROMEDRIVER 81 ERROR
+* if you get this error,
+* issue these commands;
+* > sudo apt purge chromium
+* > sudo apt install chromium
+* then go to this link : https://chromedriver.chromium.org
+* install chromedriver and copy it into Bruter19/path directory
 # YOUTUBE VIDEO
 * https://www.youtube.com/watch?v=5S1NdxuPgnA
 # LOGIN ISSUES:
