@@ -13,7 +13,7 @@ apt install python3-pip -y
 apt-get install xterm
 apt install zenity
 pip3 install colored
-wget https://chromedriver.storage.googleapis.com/81.0.4044.69/chromedriver_linux64.zip
+wget https://chromedriver.storage.googleapis.com/83.0.4103.39/chromedriver_linux64.zip
 unzip chromedriver_linux64.zip
 cp chromedriver path/
 rm chromedriver*
